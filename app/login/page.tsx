@@ -17,7 +17,7 @@ const Login: React.FC = () => {
   useEffect(() => {
     ref.current.staticStart();
     ref.current.complete();
-    console.log(window.location.pathname)
+   
   }, []);
   
   const HandleSubmit = (e: any) => {

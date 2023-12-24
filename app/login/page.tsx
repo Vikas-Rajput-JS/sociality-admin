@@ -7,7 +7,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { Metadata } from "next";
 import LoadingBar from "react-top-loading-bar";
 import toast from "react-hot-toast";
-import validator from "validator";
+
 import ApiClient from '../../Apis/ApiClient'
 import { useRouter } from "next/navigation";
 const Login: React.FC = () => {
@@ -26,12 +26,7 @@ const Login: React.FC = () => {
     if (!e.target[0].value) {
       toast.error("Please enter Email Address");
     }
-    if (!validator.isEmail(form.email) & e.target[0]?.value?.length > 0) {
-      toast.error("Please enter valid Email Address");
-    }
-    if (validator.isEmail(form.email) & !e.target[1]?.value) {
-      toast.error("Please enter password");
-    }
+   
     ApiClient.post('admin/login',form).then((res)=>{
       if(res.success){
         toast.success(res.message)

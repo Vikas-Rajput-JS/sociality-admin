@@ -1,9 +1,18 @@
 "use client";
-import { useState } from "react";
-
-const SwitcherThree = () => {
+import { useEffect, useState } from "react";
+interface SwitchThreeProps {
+  enable: string;
+}
+const SwitcherThree = ({enable}:SwitchThreeProps) => {
   const [enabled, setEnabled] = useState(false);
 
+  useEffect(()=>{
+if(enable=='active'){
+  setEnabled(true)
+}else{
+  setEnabled(false)
+}
+  },[enable])
   return (
     <div>
       <label
@@ -15,11 +24,11 @@ const SwitcherThree = () => {
             type="checkbox"
             id="toggle3"
             className="sr-only"
-            onChange={() => {
-              setEnabled(!enabled);
-            }}
+            // onChange={() => {
+            //   setEnabled(!enabled);
+            // }}
           />
-          <div className="block h-8 w-14 rounded-full bg-meta-9 dark:bg-[#5A616B]"></div>
+          <div className={`block h-8 w-14 rounded-full ${enabled?'bg-[#36e936]':'bg-[#978a]'} `}></div>
           <div
             className={`dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
               enabled && "!right-1 !translate-x-full !bg-primary dark:!bg-white"

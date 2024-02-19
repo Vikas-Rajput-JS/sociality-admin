@@ -75,7 +75,7 @@ const TableTwo = () => {
                   src={product.image}
                   width={60}
                   height={50}
-                  alt="Product"
+                  alt=""
                 />
               </div>
               <p className="text-sm text-black dark:text-white">

@@ -8,6 +8,7 @@ import Loader from "@/components/common/Loader";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function RootLayout({
   children,
@@ -15,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+const history = useRouter()
   const [loading, setLoading] = useState<boolean>(true);
+const[token,setToken] = useState('')
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
+    
   }, []);
 
   return (

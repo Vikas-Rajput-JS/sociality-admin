@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 function page() {
   const { id } = useParams();
 
-  const [form, setform] = useState({
+  const [form, setform]:any = useState({
     firstName: "",
     lastName: "",
     email: "",

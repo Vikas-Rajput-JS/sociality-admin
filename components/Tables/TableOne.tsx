@@ -264,7 +264,7 @@ const TableOne = () => {
         ))}
       </div>
       <div className="w-full">
-        <Pagination className='w-full'
+        <Pagination 
           activePage={filter.page}
           itemsCountPerPage={filter.count}
           totalItemsCount={total}

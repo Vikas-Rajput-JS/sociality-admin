@@ -1,6 +1,15 @@
+"use client"
+
+import { useSelector } from "react-redux";
 import Breadcrumb from "../Breadcrumbs/Breadcrumb";
+import { useEffect } from "react";
 
 const Calendar = () => {
+  const user = useSelector((data:any)=>data?.user)
+  console.log(user)
+  useEffect(()=>{
+console.log(user)
+  },[user])
   return (
     <>
       <Breadcrumb pageName="Calendar" />

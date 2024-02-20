@@ -40,7 +40,7 @@ const TableOne = () => {
         for (let index = 0; index < Total; index++) {
           pages.push(index + 1);
         }
-        console.log(pages);
+        // console.log(pages);
         let FinalNum = pages.shift();
         // console.log(FinalNum)
         setTotalPage(pages);

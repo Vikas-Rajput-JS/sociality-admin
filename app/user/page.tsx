@@ -12,15 +12,24 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 // import SwitcherTwo from "@/components/Switchers/SwitcherTwo";
 // import TableFour from "@/components/Tables/TableFour";
 import TableOne from "@/components/Tables/TableOne";
-
+import { useDispatch, useSelector, useStore } from 'react-redux'
 import { Metadata } from "next";
+import { useEffect } from "react";
+import { AddUser } from "../ReduxToolKit/Reducer";
 
 
 const Users = () => {
+  const dispatch:any = useDispatch()
+  const user = useSelector((state:any)=>state?.user)
+  const UserDispatch = ()=>{
+
+    dispatch(AddUser("vikas"))
+    console.log(user)
+  }
   return (
     <>
       <Breadcrumb pageName="Users" />
-
+<button onClick={UserDispatch}>hello</button>
       <div className=" w-full">
         <TableOne/>
 

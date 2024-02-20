@@ -244,7 +244,7 @@ const TableOne = () => {
           </div>
         </div>
 
-        {data.map((brand: any, key) => (
+        {data.map((itm: any, key) => (
           <div
             className={`grid grid-cols-3 sm:grid-cols-6 ${
               key === data.length - 1
@@ -255,45 +255,46 @@ const TableOne = () => {
           >
             <div className="flex items-center gap-3 p-2.5 xl:p-5">
               {/* <div className="flex-shrink-0">
-                <Image src={brand.image} alt="Brand" width={48} height={48} />
+                <Image src={itm.image} alt="itm" width={48} height={48} />
               </div> */}
               <p className="hidden text-black dark:text-white sm:block">
-                {brand.firstName} {brand?.lastName}
+                {/* {itm.firstName} {itm?.lastName} */}
+                {itm?.name}
               </p>
             </div>
 
             <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-              <p className="text-black dark:text-white">{brand.email}</p>
+              <p className="text-black dark:text-white">{itm.email}</p>
             </div>
             <div className="flex items-center justify-center p-2.5 xl:p-5">
               <p className="text-meta-3">
-                {brand.bio?.substr(0, 15) || "Hello World"}
+                {itm.bio?.substr(0, 15) || "Hello World"}
               </p>
             </div>
             <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">{brand.city}</p>
+              <p className="text-black dark:text-white">{itm.city}</p>
             </div>
             <div className="flex items-center justify-center p-2.5 xl:p-5">
               <p
                 onClick={() => {
-                  ChangeStatus(brand?.id, brand?.status);
+                  ChangeStatus(itm?.id, itm?.status);
                 }}
               >
-                <SwitcherThree enable={brand?.status} />
+                <SwitcherThree enable={itm?.status} />
               </p>
               {/* <p onClick={()=>{
-                ChangeStatus(brand?.id,brand?.status)
+                ChangeStatus(itm?.id,itm?.status)
               }}
                 className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium bg-success `}
               >
-               {brand?.status}
+               {itm?.status}
               </p> */}
             </div>
             <div className="flex items-center justify-center p-2.5 xl:p-5 ">
               <div className="w-full flex items-center justify-center">
                 <svg
                   onClick={() => {
-                    history.push(`/userdetail/${brand?.id}`);
+                    history.push(`/userdetail/${itm?.id}`);
                   }}
                   className="h-8 w-8 text-red-500 cursor-pointer"
                   viewBox="0 0 24 24"
@@ -311,7 +312,7 @@ const TableOne = () => {
 
               <svg
                 onClick={() => {
-                  DeleteUser(brand?.id);
+                  DeleteUser(itm?.id);
                 }}
                 className="h-12 w-12 text-red-500 "
                 width="24"
@@ -329,7 +330,7 @@ const TableOne = () => {
               </svg>
               <svg
                 onClick={() => {
-                  history.push(`/user/edit/${brand?.id}`);
+                  history.push(`/user/edit/${itm?.id}`);
                 }}
                 width="24"
                 height="24"

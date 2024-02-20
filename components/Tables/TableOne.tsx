@@ -367,7 +367,7 @@ const TableOne = () => {
 
             {TotalPage?.map((itm, i) => {
               return (
-                <li>
+                <li key={i}>
                   <a
                     href="#"
                     onClick={() => {

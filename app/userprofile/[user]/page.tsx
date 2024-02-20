@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+export const runtime = 'edge' || 'nodejs'  || 'edge'
 function Page() {
     const[data,setData] = useState({firstName:'',lastName:'',email:'',address:'',gender:'',image:''})
     const {user} = useParams()

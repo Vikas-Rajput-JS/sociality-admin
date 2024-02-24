@@ -9,7 +9,7 @@ import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import StoreProvider, { Providers } from "./ReduxToolKit/Provider";
+// import StoreProvider, { Providers } from "./ReduxToolKit/Provider";
 
 export default function RootLayout({
   children,
@@ -61,10 +61,10 @@ const[token,setToken] = useState('')
                 {/* <!-- ===== Main Content Start ===== --> */}
                 <main>
                   <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-                    <StoreProvider>
+                    {/* <StoreProvider> */}
 
                     {children}
-                    </StoreProvider>
+                    {/* </StoreProvider> */}
                   </div>
                 </main>
                 {/* <!-- ===== Main Content End ===== --> */}
